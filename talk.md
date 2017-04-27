@@ -91,7 +91,7 @@ with open('/sd/readme.txt') as f:
 123
 # big integer
 >>> 1 << 160
-1461501637330902918203684832716283019655932542976
+/1461501637330902918203684832716283019655932542976
 # floating point
 >>> 1.23e6
 1230000.0
@@ -365,6 +365,7 @@ homeassistant:
 
 
 # DEMO <!-- .slide: data-background-image="imgs/demo_bg.jpg" --><!-- .element: class="light shadow" -->
+[_](http://localhost:8123) [.](http://localhost:8124)
 
 
 ## my use cases
