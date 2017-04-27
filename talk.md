@@ -21,7 +21,8 @@ Note: tinkering is a **hobby**, don't want to get off the **couch** to **watch a
 Note: started with, crude web interface, only via web (phone), no wall switch, Arduino is not Python
 
 
-# Arduino is not Python <i class="twa twa-weary"></i>
+# Arduino is not Python<!-- .element: class="light shadow" --> <i class="twa twa-weary"></i>
+<!-- .slide: data-background-image="imgs/photo-1474314170901-f351b68f544f.jpeg" -->
 
 
 # Micropython <!-- .slide: data-background-image="imgs/micropython_headline.jpg"  style="text-align:left" --> <!-- .element: class="shadow" -->
@@ -121,7 +122,6 @@ total = asm_add(1, 2)
   - software only
   - port of µPy to [ESP8266](https://en.wikipedia.org/wiki/ESP8266)
 Note:  teensy, arm, esp8266, unix
-
 
 
 # ESP8266
@@ -275,39 +275,39 @@ Note: should not know that home automation is there, can use without degree, one
 ## what should Home Automation do?
 - switching lights<!-- .element: class="fragment" data-fragment-index="1" -->
 - controll heating<!-- .element: class="fragment" data-fragment-index="2" -->
-- water plants <!-- .element: class="fragment" data-fragment-index="3" -->
+- know when you're home <!-- .element: class="fragment" data-fragment-index="3" -->
 - sensors for: <!-- .element: class="fragment" data-fragment-index="4" -->
   - doors
   - temperature, wind
   - power
 
 
-## why FLOSS solution?
+## why FLOSS?
 - no vendor lock in<!-- .element: class="fragment" data-fragment-index="1" -->
 - explorable, adaptable<!-- .element: class="fragment" data-fragment-index="2" -->
-- no cloud<!-- .element: class="fragment" data-fragment-index="3" -->
-- control your own data<!-- .element: class="fragment" data-fragment-index="4" -->
+- control your own data<!-- .element: class="fragment" data-fragment-index="3" -->
+- no cloud<!-- .element: class="fragment" data-fragment-index="4" -->
+
+
+## NO CLOUD!!
+![](imgs/Screenshot_20170301-220028.png)<!-- .element: style="width:75%" -->
+![](imgs/Screenshot_20170301-220039.png)<!-- .element:  style="width:75%" class="fragment" data-fragment-index="1" -->
+
+
+## No CLOUD
+![](imgs/Screenshot_20170412-141530.png)<!-- .element: style="width:35%" -->
 
 
 ## Home Automation
 ### Open Source Solutions
 - [FHEM](http://fhem.de) (Perl)
 - [OpenHAB](http://www.openhab.org/) (Java)
-- [Home Assistant](https://home-assistant.io/) ( <i class="twa twa-snake twa-1x"></i>Python 3)
+- [Home Assistant](https://home-assistant.io/) ( <i class="twa twa-snake twa-1x"></i>Python 3)<!-- .element: class="fragment" data-fragment-index="1" -->
 
 
-
-# Python<!-- .element: class="light shadow" -->
-<!-- .slide: data-background-image="imgs/photo-1474314170901-f351b68f544f.jpeg" -->
-
-
-
-## Home Assistant <!-- .element: class="fragment" data-fragment-index="1" -->
+## Home Assistant <!-- element: class="fragment" data-fragment-index="0" -->
 [![Home Assistant](imgs/home-assistant-logo-1200x1200.png)<!-- .element: style="width:300px;"-->](//home-assistant.io/demo/)
-
-Note:# Home Assistant
-<!-- <img src="imgs/home-assistant-logo-1200x1200.png" style="width:500px;"> -->
-[![Home Assistant Logo](imgs/home-assistant-logo-1200x1200.png)<!-- .element: style="width:450px;" -->](https://home-assistant.io)
+Note: obvious choice
 
 
 ## HA - Arguments (1/2)
@@ -321,6 +321,7 @@ Note:# Home Assistant
 
 ## HA - Arguments (2/2)
 - Cross Platform (runs on Win/Mac/Linux)
+- many supported IoT devices
 - pretty
 - local or remote
 - cost<sup>[ 1](https://www.reddit.com/r/homeassistant/comments/62s6my/ill_be_giving_a_talk_about_home_assistant_whats/)</sup><!-- .element: style="font-size:50%" -->
@@ -329,7 +330,7 @@ Note: @ price connecting cheap IoT devices together is key
 
 ## wording
 - Platforms
-  - types of devices (e.g: light)
+  - types of devices (e.g: light, sensor)
 - [Components](https://home-assistant.io/components/#all)
   - instances of components </br>(e.g: Hue, Tradfri...)
 Note: platform (types of things), components  (implementsation: hue,...)
@@ -349,37 +350,42 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Vienna
   customize: !include customize.yaml
+…
 ```
 
 
-## Internet of Things (IoT) <!-- slide: data-background-image="imgs/iot_fridge.jpeg" -->
-[![iot fridge](imgs/iot_fridge.jpeg)](http://cheezburger.com/8068370944)
-Note: every device can talk to any other device
+## 639 Components
+- MQTT, Zwave, Zigbee
+- PLEX, Sonos, Kodi
+- Tradfri (IKEA), Hue, Lightify
+- Owntracks, Bluetooth
 
 
-## What if they know who/what you are?
-```bash
-~$ telnet 192.168.0.1 80
-Trying 192.168.0.1...
-Connected to 192.168.0.1.
-Escape character ist '^]'.
-GET /../../../../../../../../../../../../etc/shadow HTTP/1.1
+## use cases
+- detect when home
+- switch lights
+  - automated
+  - scenes
+- notify when bulb is broken
+
+
+## bulb broken
+![](imgs/Screenshot_20170422-144544.png)
+
+## configuration - notify
+```yaml
+notify:
+  - platform: xmpp
+    name: jabber
+    sender: !secret xmpp_user
+    password: !secret xmpp_pwd
+    recipient: !secret xmpp_recipient
+    tls: True
 ```
-```bash
-HTTP/1.1 200 OK
-Date: Wed, 16 Nov 2016 11:58:50 GMT
-Server: PST10 WebServer
-Content-Type: application/octet-stream
-Last-Modified: Fri, 22 Feb 2013 10:04:40 GMT
-Content-disposition: attachment; filename="./etc/shadow"
-Accept-Ranges: bytes
-Content-Length: 52
 
-root:$1$$Md0i[...snip...]Z001:10933:0:99999:7:::
-```
-<!-- .element: class="fragment" data-fragment-index="1" -->
-[<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>That's bad!](http://seclists.org/fulldisclosure/2017/Mar/63)<!-- .element: class="fragment" data-fragment-index="1" -->
-Note: Miele Dishwasher
+
+
+
 
 
 ## Lookout for security
