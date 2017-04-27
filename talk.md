@@ -302,7 +302,7 @@ Note: should not know that home automation is there, can use without degree, one
 ### Open Source Solutions
 - [FHEM](http://fhem.de) (Perl)
 - [OpenHAB](http://www.openhab.org/) (Java)
-- [Home Assistant](https://home-assistant.io/) ( <i class="twa twa-snake twa-1x"></i>Python 3)<!-- .element: class="fragment" data-fragment-index="1" -->
+- [Home Assistant](https://home-assistant.io/) (Python 3)
 
 
 ## Home Assistant <!-- element: class="fragment" data-fragment-index="0" -->
@@ -356,12 +356,18 @@ homeassistant:
 
 ## 639 Components
 - MQTT, Zwave, Zigbee
-- PLEX, Sonos, Kodi
-- Tradfri (IKEA), Hue, Lightify
-- Owntracks, Bluetooth
+- Multimedia (PLEX, Sonos, Kodi, ...)
+- Lights (Trådfri, Hue, Lightify,...)
+- presence detection (Owntracks, openwrt etc.)
+- sensors (weather, ...)
+- ...
 
 
-## use cases
+
+# DEMO <!-- .slide: data-background-image="imgs/demo_bg.jpg" --><!-- .element: class="light shadow" -->
+
+
+## my use cases
 - detect when home
 - switch lights
   - automated
@@ -371,6 +377,7 @@ homeassistant:
 
 ## bulb broken
 ![](imgs/Screenshot_20170422-144544.png)
+
 
 ## configuration - notify
 ```yaml
@@ -384,16 +391,52 @@ notify:
 ```
 
 
+## Zwave
+- Fibaro relay, in wall, working wall switch
+
+![](imgs/IMG_20170104_204807.jpg)<!-- .element: style="width:60%" -->
 
 
+## Automation
+
+```yaml
+automation:
+  alias: "Esstisch Lampe defekt"
+  trigger:
+    platform: state
+    entity_id: switch.fibaro_relay_switch_2_0
+    to: 'on'
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.fibaro_system_fgs223_relay_power
+      below: 145
+      above: 2
+  action:
+    - service: notify.jabber
+      data:
+        title: "Esszimmerlicht defekt"
+        message: "Birne wechseln!"
+```
+
+
+## Welcome Home!
+![](imgs/welcome_home.png)
+Note: Media center on, home server, lights
 
 
 ## Lookout for security
 [IoT done right](https://mjg59.dreamwidth.org/47803.html) [![Tradfri](http://www.ikea.com/ms/sv_SE/img/fy17/belysning/smart-belysning/ikea_smart_belysning_1620x841.gif)](https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/)
 
 
+## Thanks for your attention<!-- .slide: data-background-image="imgs/python_2.jpg" --><!-- .element:  class="light shadow" -->
 
-## Links
 
-https://t.co/SnP0ecP2Wy - ESPurna
+[@flowolf](https://twitter.com/flowolf)</br>
+[blog.flo.cx](https://blog.flo.cx)
+
+
+
+<!-- ## Links
+https://t.co/SnP0ecP2Wy - ESPurna </br>
 http://seclists.org/fulldisclosure/2017/Mar/63 - Miele ../../../
+-->
