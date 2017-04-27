@@ -364,8 +364,7 @@ homeassistant:
 
 
 
-# DEMO <!-- .slide: data-background-image="imgs/demo_bg.jpg" --><!-- .element: class="light shadow" -->
-[_](http://localhost:8123) [.](http://localhost:8124)
+# [DE](http://localhost:8123)<!-- .element: class="light shadow"-->[MO](http://localhost:8124) <!-- .slide: data-background-image="imgs/demo_bg.jpg" --><!-- .element: class="light shadow" -->
 
 
 ## my use cases
