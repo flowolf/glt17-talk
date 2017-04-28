@@ -242,8 +242,6 @@ Note: LWT is stored by broker to broadcast on ungraceful disconnect
 - publish to topic to switch device
 
 
-
-
 ## <!-- .slide: data-background-image="imgs/mqtt_relay.jpg" -->
 
 
@@ -296,6 +294,10 @@ Note: should not know that home automation is there, can use without degree, one
 
 ## No CLOUD
 ![](imgs/Screenshot_20170412-141530.png)<!-- .element: style="width:35%" -->
+
+
+## No CLOUD
+![](imgs/amazon_alexa.png)<!-- .element: style="width:40%" -->
 
 
 ## Home Automation
@@ -375,6 +377,14 @@ homeassistant:
 - notify when bulb is broken
 
 
+# Location aware<!-- .element: class="light shadow" --><!-- .slide: data-background-image="imgs/location.jpg" -->
+
+
+## Welcome Home!
+![](imgs/welcome_home.png)
+Note: Media center on, home server, lights
+
+
 ## bulb broken
 ![](imgs/Screenshot_20170422-144544.png)
 
@@ -419,11 +429,6 @@ automation:
 ```
 
 
-## Welcome Home!
-![](imgs/welcome_home.png)
-Note: Media center on, home server, lights
-
-
 ## Lookout for security
 [IoT done right](https://mjg59.dreamwidth.org/47803.html) [![Tradfri](http://www.ikea.com/ms/sv_SE/img/fy17/belysning/smart-belysning/ikea_smart_belysning_1620x841.gif)](https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/)
 
@@ -431,6 +436,7 @@ Note: Media center on, home server, lights
 ## Thanks for your attention<!-- .slide: data-background-image="imgs/python_2.jpg" --><!-- .element:  class="light shadow" -->
 
 
+<!-- .slide: data-background-image="imgs/lake_forest.jpg" style="text-align:left" class="dark "-->
 [@flowolf](https://twitter.com/flowolf)</br>
 [blog.flo.cx](https://blog.flo.cx)
 

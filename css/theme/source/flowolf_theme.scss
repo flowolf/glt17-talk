@@ -65,6 +65,14 @@ section.has-dark-background {
 	border-radius: 0.2em;
 }
 
+.reveal .light a {
+	color: #EEEEEE;
+}
+
+.reveal .dark a {
+	color: #111111;
+}
+
 .reveal section img{
 	border: 0;
 	box-shadow: none;
