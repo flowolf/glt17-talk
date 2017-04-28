@@ -2,12 +2,16 @@
 ### ... how to rule your home with Python
 
 
+## times change
+[![](imgs/Edison_Electric_Light.jpg)<!-- .element: style="width:70%" -->](https://www.flickr.com/photos/fr8/3047511335)
+
+
 ## Why Home Automation?
 - fun & because we can <i class="twa twa-tada"></i>
 - make switching things great again <i class="twa twa-seat twa-1x"></i>
 - connect things together <i class="twa twa-door twa-1x"></i><i class="twa twa-calling twa-1x"></i>
 - make life easier, automate! <i class="twa twa-date twa-1x"></i>
-Note: tinkering is a **hobby**, don't want to get off the **couch** to **watch a movie** and turn lights off, **connecting things** that didn't know each other when bought. make it **intelligent**
+Note: tinkering is a **hobby**, don't want to get off the **couch** to **watch a movie** and turn lights off, **connecting things** that didn't know each other when bought. make it **intelligent**, SAVE Energy
 
 
 ## it starts with this <!-- .slide: data-background-image="imgs/433remote.jpg" --><!-- .element: class="shadow light"-->
@@ -34,6 +38,11 @@ Note: started with, crude web interface, only via web (phone), no wall switch, A
   - Python 3, Open Source Hardware ([micropython.org](https://micropython.org/))
   - ARM chip, 192MB RAM
   - ~€33 per board <i class="twa twa-euro twa-1x"></i>
+
+
+## PyBoard v1.1
+![](imgs/PYBv1_1.jpg)<!-- .element: style="width:60%" -->
+Note: ARM chip, 192 MB RAM, $33 per board
 
 
 ## <i class="twa twa-snake twa-1x"></i> Micropython
@@ -91,7 +100,7 @@ with open('/sd/readme.txt') as f:
 123
 # big integer
 >>> 1 << 160
-/1461501637330902918203684832716283019655932542976
+1461501637330902918203684832716283019655932542976
 # floating point
 >>> 1.23e6
 1230000.0
@@ -114,6 +123,7 @@ def asm_add(r0, r1):
 # use it as a normal Python function
 total = asm_add(1, 2)
 ```
+Note: BUT cheap!!!
 
 
 ## <i class="twa twa-snake twa-1x"></i> Micropython
@@ -124,16 +134,16 @@ total = asm_add(1, 2)
 Note:  teensy, arm, esp8266, unix
 
 
+# <!-- .slide: data-background-image="imgs/esp_03.jpg" -->
+Note: ESP-03, tiny, but no power handling, no serial, 32bit, 16GPIO, one ADC,
+
+
 # ESP8266
 - <i class="fa fa-wifi" aria-hidden="true"></i> WIFI enabled
 - 32bit @ 80 Mhz
 - 16 [GPIO](https://en.wikipedia.org/wiki/GPIO) pins
 - one 10-bit [ADC](https://en.wikipedia.org/wiki/Analog-to-digital_converter)
 - cheap: ~$2
-
-
-# <!-- .slide: data-background-image="imgs/esp_03.jpg" -->
-Note: ESP-03, tiny, but no power handling, no serial
 
 
 ## ESP8266 Versions
@@ -334,7 +344,7 @@ Note: @ price connecting cheap IoT devices together is key
 - Platforms
   - types of devices (e.g: light, sensor)
 - [Components](https://home-assistant.io/components/#all)
-  - instances of components </br>(e.g: Hue, Tradfri...)
+  - instances of components </br>(e.g: Hue, Trådfri...)
 Note: platform (types of things), components  (implementsation: hue,...)
 
 
@@ -369,15 +379,15 @@ homeassistant:
 # [DE](http://localhost:8123)<!-- .element: class="light shadow"-->[MO](http://localhost:8124) <!-- .slide: data-background-image="imgs/demo_bg.jpg" --><!-- .element: class="light shadow" -->
 
 
+# Location aware<!-- .element: class="light shadow" --><!-- .slide: data-background-image="imgs/location.jpg" -->
+
+
 ## my use cases
 - detect when home
 - switch lights
   - automated
   - scenes
 - notify when bulb is broken
-
-
-# Location aware<!-- .element: class="light shadow" --><!-- .slide: data-background-image="imgs/location.jpg" -->
 
 
 ## Welcome Home!
@@ -430,7 +440,7 @@ automation:
 
 
 ## Lookout for security
-[IoT done right](https://mjg59.dreamwidth.org/47803.html) [![Tradfri](http://www.ikea.com/ms/sv_SE/img/fy17/belysning/smart-belysning/ikea_smart_belysning_1620x841.gif)](https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/)
+[IoT done right](https://mjg59.dreamwidth.org/47803.html) [![Tradfri](file:///home/flo/sync/org/talks/glt17__new/imgs/ikea_tradfri.gif)](https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/)
 
 
 ## Thanks for your attention<!-- .slide: data-background-image="imgs/python_2.jpg" --><!-- .element:  class="light shadow" -->
@@ -441,7 +451,22 @@ automation:
 [blog.flo.cx](https://blog.flo.cx)
 
 
+![](imgs/IMG_20160918_112602.jpg)<!-- .element: style="width:75%" -->
 
+
+![](imgs/IMG_20161001_124807.jpg)<!-- .element: style="width:75%" -->
+
+
+![](imgs/IMG_20170331_213508.jpg)<!-- .element: style="width:45%" -->
+
+
+![](imgs/IMG_20170401_140306.jpg)<!-- .element: style="width:75%" -->
+
+
+![](imgs/tradfri_interface.png)<!-- .element: style="width:45%" -->
+
+
+![](imgs/tradfri_gateway_2000.JPG)<!-- .element: style="width:45%" -->
 <!-- ## Links
 https://t.co/SnP0ecP2Wy - ESPurna </br>
 http://seclists.org/fulldisclosure/2017/Mar/63 - Miele ../../../
