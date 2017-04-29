@@ -440,7 +440,7 @@ automation:
 
 
 ## Lookout for security
-[IoT done right](https://mjg59.dreamwidth.org/47803.html) [![Tradfri](file:///home/flo/sync/org/talks/glt17__new/imgs/ikea_tradfri.gif)](https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/)
+[IoT done right](https://mjg59.dreamwidth.org/47803.html) [![Tradfri](imgs/ikea_tradfri.gif)](https://home-assistant.io/blog/2017/04/17/ikea-tradfri-internet-of-things-done-right/)
 
 
 ## Thanks for your attention<!-- .slide: data-background-image="imgs/python_2.jpg" --><!-- .element:  class="light shadow" -->
@@ -451,22 +451,6 @@ automation:
 [blog.flo.cx](https://blog.flo.cx)
 
 
-![](imgs/IMG_20160918_112602.jpg)<!-- .element: style="width:75%" -->
-
-
-![](imgs/IMG_20161001_124807.jpg)<!-- .element: style="width:75%" -->
-
-
-![](imgs/IMG_20170331_213508.jpg)<!-- .element: style="width:45%" -->
-
-
-![](imgs/IMG_20170401_140306.jpg)<!-- .element: style="width:75%" -->
-
-
-![](imgs/tradfri_interface.png)<!-- .element: style="width:45%" -->
-
-
-![](imgs/tradfri_gateway_2000.JPG)<!-- .element: style="width:45%" -->
 <!-- ## Links
 https://t.co/SnP0ecP2Wy - ESPurna </br>
 http://seclists.org/fulldisclosure/2017/Mar/63 - Miele ../../../
